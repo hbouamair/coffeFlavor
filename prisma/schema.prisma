@@ -1,0 +1,14 @@
+datasource db {
+  provider = "postgresql" // or any other provider you use
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model CoffeeFlavor {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?
+}
